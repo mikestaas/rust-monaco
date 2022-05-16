@@ -6,7 +6,7 @@ use crate::{
 };
 use std::{cell::RefCell, mem, rc::Rc};
 use web_sys::HtmlElement;
-use yew::{html, html::Scope, Callback, Component, Context, Html, NodeRef, Properties};
+use yew::{html, html::Scope, Callback, Classes, Component, Context, Html, NodeRef, Properties};
 
 #[derive(Clone, Debug, PartialEq, Properties)]
 pub struct CodeEditorProps<OPT: std::cmp::PartialEq + Clone + Into<IStandaloneEditorConstructionOptions> = IStandaloneEditorConstructionOptions> {
@@ -109,7 +109,7 @@ impl Component for CodeEditor {
         should_render
     }
 
-    fn view(&self, ctx:&Context<Self>) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
         let Self {
             node_ref, editor, ..
         } = self;
