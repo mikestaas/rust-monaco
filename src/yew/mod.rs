@@ -66,7 +66,8 @@ impl Component for CodeEditor {
         }
     }
 
-    fn changed(&mut self, ctx: &Context<Self>) -> bool {
+    fn changed(&mut self, ctx: &Context<Self>, _props: &CodeEditorProps) -> bool {
+        // todo: update to use props from new api ^
         let old_props = mem::replace(&mut self.props, ctx.props().clone());
         // these are the new values
         let CodeEditorProps {
